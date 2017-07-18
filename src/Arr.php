@@ -5,10 +5,8 @@ namespace ZanPHP\Support;
 use ArrayAccess;
 use Closure;
 
-class Arr
-{
-    public static function join(array $before, array $after)
-    {
+class Arr {
+    public static function join(array $before, array $after) {
         if(empty($before) ) {
             return $after;
         }
@@ -82,8 +80,7 @@ class Arr
         return $result;
     }
 
-    public static function mapKey(array $array, $col)
-    {
+    public static function mapKey(array $array, $col){
         $cols = self::array_cols($array,$col);
         if(empty($cols)){
             return array();
@@ -136,8 +133,7 @@ class Arr
      * @example Arr::createTreeByList(['a','b','c'],1);
      * @output  ['a' => [ 'b' => [ 'c' => 1 ] ] ]
      */
-    public static function createTreeByList(array $list, $value)
-    {
+    public static function createTreeByList(array $list, $value){
         if(empty($list)){
             return $value;
         }
