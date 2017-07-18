@@ -1,5 +1,4 @@
 <?php
-
 namespace ZanPHP\Support;
 
 trait Singleton

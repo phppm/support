@@ -6,10 +6,7 @@
   "autoload": {
     "psr-4": {
       "ZanPHP\\Support\\": "src/"
-    },
-    "files": [
-      "src/helpers.php"
-    ]
+    }
   },
   "extra": {
     "branch-alias": {
