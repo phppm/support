@@ -52,8 +52,7 @@ class Dir
         return $files;
     }
 
-    public static function formatPath($path)
-    {
+    public static function formatPath($path) {
         if('/' == substr($path,-1) ) {
             return $path;
         }
@@ -92,8 +91,7 @@ class Dir
         return $ret;
     }
 
-    private static function scanCurrentDir($path,$excludeDir=true)
-    {
+    private static function scanCurrentDir($path,$excludeDir=true){
         $path = self::formatPath($path);
         $dh = opendir($path);
         if(!$dh) return [];
@@ -115,8 +113,7 @@ class Dir
         return $files;
     }
 
-    private static function scanBfs($path,$excludeDir=true)
-    {
+    private static function scanBfs($path,$excludeDir=true){
         $files = [];
         $queue = new \SplQueue();
         $queue->enqueue($path);
@@ -140,8 +137,7 @@ class Dir
         return $files;
     }
 
-    private static function scanDfs($path,$excludeDir=true)
-    {
+    private static function scanDfs($path,$excludeDir=true){
         $files = [];
         $subFiles = self::scanCurrentDir($path,false);
 
