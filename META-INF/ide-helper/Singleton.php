@@ -1,6 +1,6 @@
 <?php
 
-namespace ZanPHP\Support;
+namespace Zan\Framework\Utilities\DesignPattern;
 
 trait Singleton
 {
