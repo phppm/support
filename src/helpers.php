@@ -2,7 +2,6 @@
 
 use ZanPHP\Support\Arr;
 
-
 if (! function_exists('data_set')) {
     /**
      * Set an item on an array or object using dot notation.
