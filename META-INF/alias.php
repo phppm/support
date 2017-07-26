@@ -18,5 +18,5 @@ return [
     \ZanPHP\Support\Str::class => "Zan\\Framework\\Utilities\\Types\\Str",
     \ZanPHP\Support\Time::class => "Zan\\Framework\\Utilities\\Types\\Time",
     \ZanPHP\Support\Singleton::class => "Zan\\Framework\\Utilities\\DesignPattern\\Singleton",
-    \ZanPHP\Support\LZ4::class => "Zan\Framework\Utilities\Encode\\LZ4",
+    \ZanPHP\Support\LZ4::class => "Zan\\Framework\\Utilities\\Encode\\LZ4",
 ];
