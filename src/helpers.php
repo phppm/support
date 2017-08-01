@@ -86,6 +86,8 @@ if (! function_exists('echo_exception')) {
             $code = $t->getCode();
             $msg = $t->getMessage();
             $trace = $t->getTraceAsString();
+            $line = $t->getLine();
+            $file = $t->getFile();
             $workerId = isset($_SERVER["WORKER_ID"]) ? $_SERVER["WORKER_ID"] : -1;
             echo <<<EOF
         
@@ -97,12 +99,18 @@ if (! function_exists('echo_exception')) {
           class: $class
           code: $code
           message: $msg
+          file: $file::$line
           
 $trace
 ###################################################################################
 
 
 EOF;
+
+            if ($previous = $t->getPrevious()) {
+                echo "caused by:\n";
+                echo_exception($previous);
+            }
         }
     }
 }
