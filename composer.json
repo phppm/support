@@ -1,7 +1,8 @@
 {
   "name": "zanphp/support",
   "require": {
-    "php": ">=5.6"
+    "php": ">=5.6",
+    "zanphp/contracts": "dev-master"
   },
   "autoload": {
     "psr-4": {

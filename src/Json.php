@@ -29,7 +29,7 @@ class Json
                 }
             } else {
                 ex:
-                throw new InvalidArgumentException("JSON Encode Failed: " . json_last_error_msg(), $errno, null, $args);
+                throw new InvalidArgumentException("JSON Encode Failed: " . json_last_error_msg() . "[args=" . var_export($args, true) ."]", $errno);
             }
         }
 
@@ -54,7 +54,7 @@ class Json
 
         $errno = json_last_error();
         if ($errno !== JSON_ERROR_NONE) {
-            throw new InvalidArgumentException("JSON Decode Failed: " . json_last_error_msg() . ". [raw=$json]", $errno, null, $args);
+            throw new InvalidArgumentException("JSON Decode Failed: " . json_last_error_msg() . ". [raw={$json}] [args=" . var_export($args, true) ."]", $errno);
         }
 
         return $data;
