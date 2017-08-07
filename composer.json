@@ -2,8 +2,7 @@
   "name": "zanphp/support",
   "require": {
     "php": ">=5.6",
-    "zanphp/contracts": "dev-master",
-    "zanphp/exception": "dev-master"
+    "zanphp/contracts": "dev-master"
   },
   "autoload": {
     "psr-4": {
