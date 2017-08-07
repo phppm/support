@@ -2,7 +2,7 @@
 
 namespace ZanPHP\Support;
 
-use InvalidArgumentException;
+use ZanPHP\Exception\System\InvalidArgumentException;
 
 class Json
 {
