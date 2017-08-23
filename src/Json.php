@@ -6,6 +6,18 @@ use InvalidArgumentException;
 
 class Json
 {
+    public static function isJson($var)
+    {
+        // 实现json序列化接口的对象decode可能抛异常
+        try {
+            json_decode($var);
+            $errno = json_last_error();
+            return $errno === JSON_ERROR_NONE;
+        } catch (\Throwable $t) {
+        } catch (\Exception $e) {}
+        return false;
+    }
+
     /**
      * @param mixed $value
      * @param int $options
