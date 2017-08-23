@@ -8,14 +8,13 @@ class Json
 {
     public static function isJson($var)
     {
-        // 实现json序列化接口的对象decode可能抛异常
-        try {
-            json_decode($var);
-            $errno = json_last_error();
-            return $errno === JSON_ERROR_NONE;
-        } catch (\Throwable $t) {
-        } catch (\Exception $e) {}
-        return false;
+        if (!is_string($var)) {
+            return false;
+        }
+
+        $r = json_decode($var);
+        $errno = json_last_error();
+        return $r !== null && $errno === JSON_ERROR_NONE;
     }
 
     /**
