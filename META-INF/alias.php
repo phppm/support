@@ -19,4 +19,9 @@ return [
     \ZanPHP\Support\Time::class => "Zan\\Framework\\Utilities\\Types\\Time",
     \ZanPHP\Support\Singleton::class => "Zan\\Framework\\Utilities\\DesignPattern\\Singleton",
     \ZanPHP\Support\LZ4::class => "Zan\\Framework\\Utilities\\Encode\\LZ4",
+
+    \ZanPHP\Support\Di::class => "Zan\\Framework\\Foundation\\Container\\Di",
+    \ZanPHP\Support\Container::class => "Zan\\Framework\\Foundation\\Container\\Container",
+    \ZanPHP\Support\Stub::class => "Zan\\Framework\\Testing\\Stub",
+
 ];
