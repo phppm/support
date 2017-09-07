@@ -2,90 +2,52 @@
 
 namespace Zan\Framework\Foundation\Container;
 
-use ReflectionClass;
-use Zan\Framework\Testing\Stub;
-
 class Container
 {
-    protected $mockInstances = [];
+    private $Container;
 
-    protected $instances = [];
+    public function __construct()
+    {
+        $this->Container = new \ZanPHP\Support\Container();
+    }
 
     public function get($abstract)
     {
-        $abstract = $this->normalize($abstract);
-
-        if (isset($this->mockInstances[$abstract])) {
-            return $this->mockInstances[$abstract];
-        }
-
-        if (isset($this->instances[$abstract])) {
-            return $this->instances[$abstract];
-        }
-
-        return null;
+        $this->Container->get($abstract);
     }
 
     public function set($alias, $instance)
     {
-        if (!isset($this->instances[$alias])) {
-            $this->instances[$alias] = $instance;
-        }
+        $this->Container->set($alias, $instance);
     }
 
     public function setMockInstance($abstract, $instance)
     {
-        $abstract = $this->normalize($abstract);
-        $this->mockInstances[$abstract] = $instance;
+        $this->Container->setMockInstance($abstract, $instance);
     }
 
-    public function addStub(Stub $stub)
+    public function addStub($stub)
     {
-        $className = $stub->getRealClassName();
-
-        $this->setMockInstance($className, $stub);
+        $this->Container->addStub($stub);
     }
 
     public function cleanStub()
     {
-        $this->mockInstances = [];
+        $this->Container->cleanStub();
     }
 
     public function singleton($abstract, array $parameters = [])
     {
-        return $this->make($abstract, $parameters, true);
+        $this->Container->singleton($abstract, $parameters);
     }
 
     public function make($abstract, array $parameters = [], $shared = false)
     {
-        $abstract = $this->normalize($abstract);
-
-        if (isset($this->mockInstances[$abstract])) {
-            return $this->mockInstances[$abstract];
-        }
-
-        if ($shared && isset($this->instances[$abstract])) {
-            return $this->instances[$abstract];
-        }
-
-        $class = new ReflectionClass($abstract);
-        $object = $class->newInstanceArgs($parameters);
-
-        if ($shared && $object !== null) {
-            $this->instances[$abstract] = $object;
-        }
-
-        return $object;
+        $this->Container->make($abstract, $parameters, $shared);
     }
 
-    /**
-     * Normalize the given class name by removing leading slashes.
-     *
-     * @param  string $className
-     * @return string
-     */
     protected function normalize($className)
     {
-        return is_string($className) ? ltrim($className, '\\') : $className;
+        $this->Container->normalize($className);
     }
 }

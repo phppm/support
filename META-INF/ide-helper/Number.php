@@ -2,12 +2,10 @@
 
 namespace Zan\Framework\Utilities\Types;
 
-use InvalidArgumentException;
-
 class Number
 {
     public static function floatToString($float) /* string */
     {
-
+        \ZanPHP\Support\Number::floatToString($float);
     }
 }

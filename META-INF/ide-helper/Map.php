@@ -4,24 +4,20 @@ namespace ZanPHP\Support;
 
 class Map
 {
-    private $data = null;
+    private $Map;
 
     public function __construct()
     {
-        $this->data = [];
+        $this->Map = new \ZanPHP\Support\Map();
     }
 
     public function get($key, $default=null)
     {
-        if(!isset($this->data[$key])) {
-            return $default;
-        }
-
-        return $this->data[$key];
+        $this->Map->get($key, $default);
     }
 
     public function set($key, $value)
     {
-        $this->data[$key] = $value;
+        $this->Map->set($key, $value);
     }
 }

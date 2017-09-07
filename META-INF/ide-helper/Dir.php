@@ -2,35 +2,30 @@
 
 namespace Zan\Framework\Utilities\Types;
 
-
 class Dir
 {
-    const SCAN_CURRENT_DIR  = 'current';
-    const SCAN_BFS = 'bfs';
-    const SCAN_DFS = 'dfs';
-
-    public static function glob($path, $pattern=null, $strategy=self::SCAN_DFS)
+    public static function glob($path, $pattern=null, $strategy)
     {
-
+        \ZanPHP\Support\Dir::glob($path, $pattern, $strategy);
     }
 
-    public static function scan($path, $strategy=self::SCAN_CURRENT_DIR, $excludeDir=true)
+    public static function scan($path, $strategy, $excludeDir=true)
     {
-
+        \ZanPHP\Support\Dir::scan($path, $strategy, $excludeDir);
     }
 
     public static function formatPath($path)
     {
-
+        \ZanPHP\Support\Dir::formatPath($path);
     }
 
     public static function matchPattern($pattern, $file)
     {
-
+        \ZanPHP\Support\Dir::matchPattern($pattern, $file);
     }
 
     public static function basename($pathes, $suffix='')
     {
-
+        \ZanPHP\Support\Dir::basename($pathes, $suffix);
     }
 }

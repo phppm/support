@@ -6,213 +6,96 @@ class Arr
 {
     public static function join(array $before, array $after)
     {
-
+        \ZanPHP\Support\Arr::join($before, $after);
     }
 
     public static function sortByArray(array $arr, array $sort, $withNotExists=false)
     {
-
+        \ZanPHP\Support\Arr::sortByArray($arr, $sort, $withNotExists);
     }
 
     public static function merge()
     {
-
+        \ZanPHP\Support\Arr::merge();
     }
 
     public static function mapKey(array $array, $col)
     {
-
+        \ZanPHP\Support\Arr::mapKey($array, $col);
     }
 
-    /**
-     * ======================================
-     *  input:
-     * --------------------------------------
-     *  $arr = array(
-     *      [ key1 => 1 , key2 => 2],
-     *      [ key1 => 3 , key2 => 4],
-     *      [ key1 => 5 , key2 => 6],
-     *  );
-     *  $col = key1;
-     * ======================================
-     * output
-     * --------------------------------------
-     * array( 1,3,5 );
-     *
-     */
     public static function array_cols($arr,$col,$default=false,$is_unique = false)
     {
-
+        \ZanPHP\Support\Arr::array_cols($arr,$col,$default,$is_unique);
     }
 
-    /**
-     * @param array $list
-     * @param $value
-     * @return array
-     *
-     * @example Arr::createTreeByList(['a','b','c'],1);
-     * @output  ['a' => [ 'b' => [ 'c' => 1 ] ] ]
-     */
     public static function createTreeByList(array $list, $value)
     {
-
+        \ZanPHP\Support\Arr::createTreeByList($list, $value);
     }
 
-    /**
-     * Determine whether the given value is array accessible.
-     *
-     * @param  mixed  $value
-     * @return bool
-     */
     public static function accessible($value)
     {
-
+        \ZanPHP\Support\Arr::accessible($value);
     }
 
-    /**
-     * Flatten a multi-dimensional associative array with dots.
-     *
-     * @param  array   $array
-     * @param  string  $prepend
-     * @return array
-     */
     public static function dot($array, $prepend = '')
     {
-
+        \ZanPHP\Support\Arr::dot($array, $prepend);
     }
 
-    /**
-     * Determine if the given key exists in the provided array.
-     *
-     * @param  \ArrayAccess|array  $array
-     * @param  string|int  $key
-     * @return bool
-     */
     public static function exists($array, $key)
     {
-
+        \ZanPHP\Support\Arr::exists($array, $key);
     }
 
-    /**
-     * Get an item from an array using "dot" notation.
-     *
-     * @param  \ArrayAccess|array  $array
-     * @param  string  $key
-     * @param  mixed   $default
-     * @return mixed
-     */
     public static function get($array, $key, $default = null)
     {
-
+        \ZanPHP\Support\Arr::get($array, $key, $default);
     }
 
-    /**
-     * Check if an item exists in an array using "dot" notation.
-     *
-     * @param  \ArrayAccess|array  $array
-     * @param  string  $key
-     * @return bool
-     */
     public static function has($array, $key)
     {
-
+        \ZanPHP\Support\Arr::has($array, $key);
     }
 
-    /**
-     * Set an array item to a given value using "dot" notation.
-     *
-     * If no key is given to the method, the entire array will be replaced.
-     *
-     * @param  array   $array
-     * @param  string  $key
-     * @param  mixed   $value
-     * @return array
-     */
     public static function set(&$array, $key, $value)
     {
-
+        \ZanPHP\Support\Arr::set(&$array, $key, $value);
     }
 
-    /**
-     * Filter the array using the given callback.
-     *
-     * @param  array  $array
-     * @param  callable  $callback
-     * @return array
-     */
     public static function where($array, callable $callback)
     {
-
+        \ZanPHP\Support\Arr::where($array, $callback);
     }
 
-    /**
-     * Get all of the given array except for a specified array of items.
-     *
-     * @param  array  $array
-     * @param  array|string  $keys
-     * @return array
-     */
     public static function except($array, $keys)
     {
-
+        \ZanPHP\Support\Arr::except($array, $keys);
     }
 
-    /**
-     * Remove one or many array items from a given array using "dot" notation.
-     *
-     * @param  array  $array
-     * @param  array|string  $keys
-     * @return void
-     */
     public static function forget(&$array, $keys)
     {
-
+        \ZanPHP\Support\Arr::forget(&$array, $keys);
     }
 
-    /**
-     * Get a subset of the items from the given array.
-     *
-     * @param  array  $array
-     * @param  array  $keys
-     * @return array
-     */
     public static function only(array $array, array $keys)
     {
-
+        \ZanPHP\Support\Arr::only($array, $keys);
     }
 
-    /**
-     * Return the values from a single column in the input array
-     *
-     * @link http://www.php.net/manual/en/function.array-column.php
-     *
-     * @param array $input
-     * @param mixed $columnKey
-     * @param mixed $indexKey
-     *
-     * @return array Returns an array of values representing a single column from the input array.
-     */
     public static function column(array $input, $columnKey, $indexKey = null)
     {
-
+        \ZanPHP\Support\Arr::column($input, $columnKey, $indexKey);
     }
-    
-    /**
-     * Return the values from a columns in the input array
-     *
-     * @param array $input
-     * @param array $columnKeys
-     * @param mixed $indexKey
-     *
-     * @return array Returns an array of values representing a columns from the input array.
-     */
+
     public static function columns(array $input, $columnKeys, $indexKey = null)
     {
-
+        \ZanPHP\Support\Arr::columns($input, $columnKeys, $indexKey);
     }
 
     public static function arraySort($arr, $col, $sort = 'desc', $default = false)
     {
-
+        \ZanPHP\Support\Arr::arraySort($arr, $col, $sort, $default);
     }
 }

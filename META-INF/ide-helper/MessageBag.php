@@ -11,228 +11,110 @@ use ZanPHP\Contracts\Support\MessageBag as MessageBagContract;
 
 class MessageBag implements Arrayable, Countable, Jsonable, JsonSerializable, MessageBagContract, MessageProvider
 {
-    /**
-     * Create a new message bag instance.
-     *
-     * @param  array $messages
-     */
+    private $MessageBag;
+
     public function __construct(array $messages = [])
     {
-
+        $this->MessageBag = new \ZanPHP\Support\MessageBag($messages);
     }
 
-    /**
-     * Get the keys present in the message bag.
-     *
-     * @return array
-     */
     public function keys()
     {
-
+        $this->MessageBag->keys();
     }
 
-    /**
-     * Add a message to the bag.
-     *
-     * @param  string  $key
-     * @param  string  $message
-     * @return $this
-     */
     public function add($key, $message)
     {
-
+        $this->MessageBag->add($key, $message);
     }
 
-    /**
-     * Merge a new array of messages into the bag.
-     *
-     * @param  \Zan\Framework\Contract\Foundation\MessageProvider|array  $messages
-     *
-     * @return $this
-     */
     public function merge($messages)
     {
-
+        $this->MessageBag->merge($messages);
     }
 
-
-    /**
-     * Determine if messages exist for a given key.
-     *
-     * @param  string  $key
-     * @return bool
-     */
     public function has($key = null)
     {
-
+        $this->MessageBag->has($key);
     }
 
-    /**
-     * Get the first message from the bag for a given key.
-     *
-     * @param  string  $key
-     * @param  string  $format
-     * @return string
-     */
     public function first($key = null, $format = null)
     {
-
+        $this->MessageBag->first($key, $format);
     }
 
-    /**
-     * Get all of the messages from the bag for a given key.
-     *
-     * @param  string  $key
-     * @param  string  $format
-     * @return array
-     */
     public function get($key, $format = null)
     {
-
+        $this->MessageBag->get($key, $format);
     }
 
-    /**
-     * Get all of the messages for every key in the bag.
-     *
-     * @param  string  $format
-     * @return array
-     */
     public function all($format = null)
     {
-
+        $this->MessageBag->all($format);
     }
 
-    /**
-     * Get all of the unique messages for every key in the bag.
-     *
-     * @param  string  $format
-     * @return array
-     */
     public function unique($format = null)
     {
-
+        $this->MessageBag->unique($format);
     }
 
-
-    /**
-     * Get the raw messages in the container.
-     *
-     * @return array
-     */
     public function messages()
     {
-
+        $this->MessageBag->messages();
     }
 
-    /**
-     * Get the raw messages in the container.
-     *
-     * @return array
-     */
     public function getMessages()
     {
-
+        $this->MessageBag->getMessages();
     }
 
-    /**
-     * Get the messages for the instance.
-     *
-     * @return \Zan\Framework\Utilities\Types\MessageBag
-     */
     public function getMessageBag()
     {
-
+        $this->MessageBag->getMessageBag();
     }
 
-    /**
-     * Get the default message format.
-     *
-     * @return string
-     */
     public function getFormat()
     {
-
+        $this->MessageBag->getFormat();
     }
 
-    /**
-     * Set the default message format.
-     *
-     * @param  string  $format
-     * @return \Zan\Framework\Utilities\Types\MessageBag
-     */
     public function setFormat($format = ':message')
     {
-
+        $this->MessageBag->setFormat($format);
     }
 
-    /**
-     * Determine if the message bag has any messages.
-     *
-     * @return bool
-     */
     public function isEmpty()
     {
-
+        $this->MessageBag->isEmpty();
     }
 
-    /**
-     * Determine if the message bag has any messages.
-     *
-     * @return bool
-     */
     public function any()
     {
-
+        $this->MessageBag->any();
     }
 
-    /**
-     * Get the number of messages in the container.
-     *
-     * @return int
-     */
     public function count()
     {
-
+        $this->MessageBag->count();
     }
 
-    /**
-     * Get the instance as an array.
-     *
-     * @return array
-     */
     public function toArray()
     {
-
+        $this->MessageBag->toArray();
     }
 
-    /**
-     * Convert the object into something JSON serializable.
-     *
-     * @return array
-     */
     public function jsonSerialize()
     {
-
+        $this->MessageBag->jsonSerialize();
     }
 
-    /**
-     * Convert the object to its JSON representation.
-     *
-     * @param  int  $options
-     * @return string
-     */
     public function toJson($options = 0)
     {
-
+        $this->MessageBag->toJson($options);
     }
 
-    /**
-     * Convert the message bag to its string representation.
-     *
-     * @return string
-     */
     public function __toString()
     {
-
+        return $this->MessageBag->__toString();
     }
 }
