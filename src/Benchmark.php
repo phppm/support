@@ -30,7 +30,7 @@ class Benchmark
      */
     public static function mark($name)
     {
-        $marker[$name] = microtime(TRUE);
+        static::$marker[$name] = microtime(TRUE);
     }
 
     /**
@@ -47,15 +47,15 @@ class Benchmark
      */
     public static function elapsed_time($point1 = '', $point2 = '', $decimals = 4)
     {
-        if (!isset($marker[$point1])) {
+        if (!isset(static::$marker[$point1])) {
             return '';
         }
 
-        if (!isset($marker[$point2])) {
-            $marker[$point2] = microtime(TRUE);
+        if (!isset(static::$marker[$point2])) {
+            static::$marker[$point2] = microtime(TRUE);
         }
 
-        return number_format($marker[$point2] - $marker[$point1], $decimals);
+        return number_format(static::$marker[$point2] - static::$marker[$point1], $decimals);
     }
 
 }
