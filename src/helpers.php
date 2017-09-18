@@ -154,3 +154,12 @@ if (! function_exists('d')) {
         var_dump(...func_get_args());
     }
 }
+
+if (!function_exists('clear_ob')) {
+    function clear_ob()
+    {
+        while (ob_get_level() > 0) {
+            ob_end_flush();
+        }
+    }
+}
