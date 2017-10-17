@@ -9,14 +9,14 @@ class Di
     /**
      * The resolved object instances.
      *
-     * @var \Zan\Framework\Foundation\Container\Container
+     * @var \ZanPHP\Support\Container
      */
     protected static $instance;
 
     /**
      * set the underlying instance behind the facade.
      *
-     * @param  \Zan\Framework\Foundation\Container\Container  $instance
+     * @param  \ZanPHP\Support\Container  $instance
      */
     public static function resolveFacadeInstance(Container $instance)
     {
