@@ -61,7 +61,7 @@ class Arr
 
     public static function set(&$array, $key, $value)
     {
-        \ZanPHP\Support\Arr::set(&$array, $key, $value);
+        \ZanPHP\Support\Arr::set($array, $key, $value);
     }
 
     public static function where($array, callable $callback)
@@ -76,7 +76,7 @@ class Arr
 
     public static function forget(&$array, $keys)
     {
-        \ZanPHP\Support\Arr::forget(&$array, $keys);
+        \ZanPHP\Support\Arr::forget($array, $keys);
     }
 
     public static function only(array $array, array $keys)
